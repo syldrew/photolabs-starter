@@ -2,6 +2,7 @@ import React from 'react';
 import PhotoList from 'components/PhotoList';
 import TopicList from 'components/TopicList';
 import TopNavigationBar from 'components/TopNavigationBar';
+import HomeRoute from 'routes/HomeRoute';
 // import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
 
@@ -28,6 +29,7 @@ const App = () => {
     <PhotoList />
     <TopicList />
     <TopNavigationBar />
+    <HomeRoute />
 
     </div>
   );
