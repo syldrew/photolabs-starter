@@ -1,32 +1,11 @@
 import React from "react";
-
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 
-// const sampleDataForPhotoListItem = {
-//   id: "1",
-//   location: {
-//     city: "Montreal",
-//     country: "Canada",
-//   },
-//   imageSource: `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
-//   username: "Joe Example",
-//   profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
-// };
-
 const PhotoListItem = (props) => {
-    // const { imageSource, profile, username, location } = props.data;
        const { urls, user, location } = props.data;
     return (
-
-    //   <div>
-    //     <img src={props.data.imageSource}></img>
-    //     <img src={props.data.profile}></img>
-    //     <p>{props.data.username}</p>
-    //     <p>{props.data.location.city}, {props.data.location.country}</p>
-    //   </div>  
-
 <div className="photo-list__item">
     <PhotoFavButton></PhotoFavButton>
     <img className="photo-list__image" src={urls.regular} alt="Photo"></img>
