@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoList from 'components/PhotoList';
 import TopicList from 'components/TopicList';
+import TopNavigationBar from 'components/TopNavigationBar';
 // import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
 
@@ -26,6 +27,7 @@ const App = () => {
     {/* {photos.map((photo, index) => <PhotoListItem data={photo} key={index}/>)} */}
     <PhotoList />
     <TopicList />
+    <TopNavigationBar />
 
     </div>
   );
