@@ -2,11 +2,11 @@ import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
-const PhotoListItem = (props) => {
-       const { urls, user, location } = props.data;
+const PhotoListItem = ({ isFav, toggleLike, photoId, data }) => {
+          const { urls, user, location } = data;
     return (
-<div className="photo-list__item">
-    <PhotoFavButton></PhotoFavButton>
+    <div className="photo-list__item">
+     <PhotoFavButton isFav={isFav} toggleLikev={toggleLike} photoId={photoId}></PhotoFavButton>   
     <img className="photo-list__image" src={urls.regular} alt="Photo"></img>
      <div className="photo-list__user-details">
     <img className="photo-list__user-profile" src={user.profile} alt={`Profile Image for ${user.username}`}></img>
