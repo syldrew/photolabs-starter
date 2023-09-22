@@ -9,13 +9,14 @@ import './App.scss';
             state: { favs, selectedPhoto, modal, photoData, topicData},
             updateToFavPhotoIds,
             setPhotoSelected,
+            getPhotosByTopic,
             onClosePhotoDetailsModal
           } = useApplicationData();
           const isFav = (photoId) => favs.includes(photoId);
           const isFavPhotoExist = favs.length > 0;
   return (
     <div className="App">
-      <HomeRoute isFavPhotoExist={isFavPhotoExist} isFav={isFav} toggleLike={updateToFavPhotoIds} photos={photoData} topics={topicData} isModal={setPhotoSelected} />
+      <HomeRoute isFavPhotoExist={isFavPhotoExist} isFav={isFav} toggleLike={updateToFavPhotoIds} photos={photoData} topics={topicData}  getPhotosByTopic={getPhotosByTopic} isModal={setPhotoSelected} />
       {modal && <PhotoDetailsModal isModal={setPhotoSelected} closeModal={onClosePhotoDetailsModal} selectedPhoto={selectedPhoto} isFav={isFav} toggleLike={updateToFavPhotoIds}  />}
     </div>
   );

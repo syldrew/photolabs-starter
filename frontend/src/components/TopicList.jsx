@@ -2,10 +2,10 @@ import React from "react";
 import TopicListItem from "./TopicListItem"
 import "../styles/TopicList.scss";
 
-const TopicList = ({ topics }) => {
+const TopicList = ({ topics,getPhotosByTopic }) => {
     const topicList = topics.map(topic => {
         return (
-          <TopicListItem data={topic} key={topic.id} />
+          <TopicListItem topic={topic} key={topic.id} getPhotosByTopic={getPhotosByTopic} />
         );
       });
   return (
