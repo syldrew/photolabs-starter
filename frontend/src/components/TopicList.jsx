@@ -8,11 +8,11 @@ const TopicList = ({ topics,getPhotosByTopic }) => {
           <TopicListItem topic={topic} key={topic.id} getPhotosByTopic={getPhotosByTopic} />
         );
       });
-  return (
-    <div className="top-nav-bar__topic-list">
-       {topicList}
-    </div>
-  );
+        return (
+           <div className="top-nav-bar__topic-list">
+              {topicList}
+           </div>
+         );
 };
 
 export default TopicList;

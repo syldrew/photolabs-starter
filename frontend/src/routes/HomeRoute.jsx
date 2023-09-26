@@ -3,7 +3,7 @@ import TopNavigationBar from 'components/TopNavigationBar';
 import PhotoList from 'components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ isFavPhotoExist, isFav, toggleLike, isModal, topics,photos, getPhotosByTopic,}) => {
+const HomeRoute = ({ isFavPhotoExist, isFav, toggleLike, isModal, topics,photos, getPhotosByTopic}) => {
   return (
     <div className="home-route">
            <TopNavigationBar isFavPhotoExist={isFavPhotoExist} topics={topics} getPhotosByTopic={getPhotosByTopic}/>

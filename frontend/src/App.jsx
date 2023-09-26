@@ -12,14 +12,14 @@ import './App.scss';
             getPhotosByTopic,
             onClosePhotoDetailsModal
           } = useApplicationData();
-          const isFav = (photoId) => favs.includes(photoId);
+          const isFav = photoId => favs.includes(photoId);
           const isFavPhotoExist = favs.length > 0;
-  return (
-    <div className="App">
-      <HomeRoute isFavPhotoExist={isFavPhotoExist} isFav={isFav} toggleLike={updateToFavPhotoIds} photos={photoData} topics={topicData}  getPhotosByTopic={getPhotosByTopic} isModal={setPhotoSelected} />
-      {modal && <PhotoDetailsModal isModal={setPhotoSelected} closeModal={onClosePhotoDetailsModal} selectedPhoto={selectedPhoto} isFav={isFav} toggleLike={updateToFavPhotoIds}  />}
-    </div>
-  );
+              return (
+                 <div className="App">
+                     <HomeRoute isFavPhotoExist={isFavPhotoExist} isFav={isFav} toggleLike={updateToFavPhotoIds} photos={photoData} topics={topicData}  getPhotosByTopic={getPhotosByTopic} isModal={setPhotoSelected} />
+                     {modal && <PhotoDetailsModal isModal={setPhotoSelected} closeModal={onClosePhotoDetailsModal} selectedPhoto={selectedPhoto} isFav={isFav} toggleLike={updateToFavPhotoIds}  />}
+                 </div>
+             );
 };
 
 export default App;

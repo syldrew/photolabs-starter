@@ -65,7 +65,6 @@ export const useApplicationData = () => {
       .then(res => res.json())
       .then(photosByTopic => {
         dispatch({ type: SET_PHOTO_DATA, payload: photosByTopic });
-        console.log(state.photoData);
       });
   };
 
