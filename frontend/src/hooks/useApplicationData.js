@@ -4,6 +4,7 @@ import { useReducer, useEffect } from 'react';
 const initialState = {
   favs: [],
   selectedPhoto: null,
+  selectedTopic: null,
   modal: false,
   photoData: [], // New state for photo data
   topicData: [], // New state for topic data
@@ -12,6 +13,7 @@ const initialState = {
 // Define action types
 const TOGGLE_FAV = 'TOGGLE_FAV';
 const SET_SELECTED_PHOTO = 'SET_SELECTED_PHOTO';
+const SELECT_TOPIC = 'SELECT_TOPIC'
 const CLOSE_PHOTO_DETAILS_MODAL = 'CLOSE_PHOTO_DETAILS_MODAL';
 const SET_PHOTO_DATA = 'SET_PHOTO_DATA';
 const SET_TOPIC_DATA ='SET_TOPIC_DATA';
@@ -29,6 +31,9 @@ const reducer = (state, action) => {
     case SET_SELECTED_PHOTO:
       return { ...state, selectedPhoto: action.payload, modal: true };
 
+    case SELECT_TOPIC:
+      return { ...state, selectedTopic: action.payload};  
+
     case CLOSE_PHOTO_DETAILS_MODAL:
       return { ...state, modal: false, selectedPhoto: null };
 
@@ -40,6 +45,7 @@ const reducer = (state, action) => {
 
     default:
       return state;
+    
   }
 };
 
@@ -52,7 +58,7 @@ export const useApplicationData = () => {
     dispatch({ type: TOGGLE_FAV, payload: photoId });
   };
 
-  const setPhotoSelected = (photo) => {
+  const setPhotoSelected = photo => {
     dispatch({ type: SET_SELECTED_PHOTO, payload: photo });
   };
 
